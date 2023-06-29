@@ -1,7 +1,8 @@
 import React from "react";
 import "./style.css";
 const Book = ({ searchResults }) => {
-  const defaultImage ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK2FhkpoU8UOudx3wcmGfYQgFizL9AnAiZnw&usqp=CAU%27"
+  const defaultImage =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK2FhkpoU8UOudx3wcmGfYQgFizL9AnAiZnw&usqp=CAU%27";
   return (
     <div>
       <div class="cardBody">
@@ -10,7 +11,11 @@ const Book = ({ searchResults }) => {
             {item.volumeInfo.imageLinks &&
               item.volumeInfo.imageLinks.thumbnail && (
                 <img
-                  src={item.volumeInfo.imageLinks.thumbnail !== undefined ? item.volumeInfo.imageLinks.thumbnail:defaultImage}
+                  src={
+                    item.volumeInfo.imageLinks.thumbnail !== undefined
+                      ? item.volumeInfo.imageLinks.thumbnail
+                      : defaultImage
+                  }
                   alt={item.volumeInfo.title}
                 />
               )}

@@ -3,33 +3,41 @@ import Book from "./Book";
 import "./style.css";
 import MyImage from "./log.png";
 import { useState } from "react";
+
 const Explorer = () => {
   const [index, setIndex] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const handleChange = () => {
+
+  const handleChange = (e) => {
+    if (index === "") return;
+    e.preventDefault();
     const url = `https://www.googleapis.com/books/v1/volumes?q=${index}`;
     fetch(url)
-      .then((respance) => respance.json())
+      .then((response) => response.json())
       .then((data) => setSearchResults(data.items))
       .catch((err) => console.log(err));
   };
   return (
     <div>
-      <div class="explorer">
-        <img class="log" src={MyImage} alt="" />
-        <div class="explorerInput">
-           <p> </p>
-          <input type="text" onChange={(e) => setIndex(e.target.value)} placeholder="search books"></input>
-          <button type="submit" onClick={handleChange}>
-            search
-          </button>
+      <div className="explorer">
+        <img className="log" src={MyImage} alt="" />
+        <div className="explorerInput">
+          <form onSubmit={handleChange}>
+            <input
+              type="text"
+              onChange={(e) => setIndex(e.target.value)}
+              placeholder="search books"
+            />
+            <button type="submit">search</button>
+          </form>
         </div>
-        <div class="line"> </div>
+        <div className="line"></div>
       </div>
-      <div class="bookExplorer">
+      <div className="bookExplorer">
         <Book searchResults={searchResults} />
       </div>
     </div>
   );
 };
+
 export default Explorer;

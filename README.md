@@ -24,22 +24,15 @@ This is a React application that allows you to search for books using the Google
 ## Usage
 
 1. Obtain a Google Books API key by following the [Google Books API documentation](https://developers.google.com/books/docs/overview).
-2. Create a new file called `.env` in the project root directory.
-3. Add the following line to the `.env` file, replacing `<YOUR_API_KEY>` with your actual API key:
 
-   ```plaintext
-   REACT_APP_API_KEY=<YOUR_API_KEY>
-   ```
-
-4. Save the `.env` file.
-5. Start the development server with the following command:
+2. Start the development server with the following command:
 
    ```bash
    npm start
    ```
 
-6. Open your web browser and navigate to `http://localhost:3000` to access the application.
-7. Enter keywords or phrases in the search input field to search for books.
+3. Open your web browser and navigate to `http://localhost:3000` to access the application.
+4. Enter keywords or phrases in the search input field to search for books.
 
 ## Dependencies
 

@@ -1,5 +1,3 @@
-Certainly! Here's a README file for the provided code:
-
 # Google Books Explorer
 
 This is a React application that allows you to search for books using the Google Books API and displays the search results. You can view book information such as the title, author, and an option to purchase the book.

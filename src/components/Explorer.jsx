@@ -18,27 +18,25 @@ const Explorer = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <>
-      <div>
-        <div className="explorer">
-          <img className="log" src={MyImage} alt="" />
-          <div className="explorerInput">
-            <form onSubmit={handleChange}>
-              <input
-                type="text"
-                onChange={(e) => setIndex(e.target.value)}
-                placeholder="search books"
-              />
-              <button type="submit">search</button>
-            </form>
-          </div>
-          <div className="line"></div>
+    <div>
+      <div className="explorer">
+        <img className="log" src={MyImage} alt="" />
+        <div className="explorerInput">
+          <form onSubmit={handleChange}>
+            <input
+              type="text"
+              onChange={(e) => setIndex(e.target.value)}
+              placeholder="search books"
+            />
+            <button type="submit">search</button>
+          </form>
         </div>
-        <div className="bookExplorer">
-          <Book searchResults={searchResults} />
-        </div>
+        <div className="line"></div>
       </div>
-    </>
+      <div className="bookExplorer">
+        <Book searchResults={searchResults} />
+      </div>
+    </div>
   );
 };
 
